@@ -1,0 +1,176 @@
+package aplicacao;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class FormCliente extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textIdCliente;
+	private JTextField textNomeCliente;
+	private JTextField textEmail;
+	private JTextField textIdUsuario;
+	private JTextField textNomeUsuario;
+	private JPasswordField txtSenha;
+	private JLabel lblIdEndereco;
+	private JTextField textEndereco;
+	private JTextField textLogradouro;
+	private JTextField textNumero;
+	private JTextField textBairro;
+	private JLabel lblLogradouro;
+	private JLabel lblNumero;
+	private JLabel lblBairro;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FormCliente frame = new FormCliente();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FormCliente() {
+		setResizable(false);
+		setTitle("Gerenciar Clientes");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 652, 602);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 224));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblIdCliente = new JLabel("id do Cliente");
+		lblIdCliente.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblIdCliente.setBounds(21, 21, 98, 19);
+		contentPane.add(lblIdCliente);
+		
+		textIdCliente = new JTextField();
+		textIdCliente.setBounds(21, 49, 86, 20);
+		contentPane.add(textIdCliente);
+		textIdCliente.setColumns(10);
+		
+		JLabel lblNomeCliente = new JLabel("Nome do Cliente:");
+		lblNomeCliente.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNomeCliente.setBounds(143, 23, 173, 14);
+		contentPane.add(lblNomeCliente);
+		
+		textNomeCliente = new JTextField();
+		textNomeCliente.setBounds(143, 49, 325, 20);
+		contentPane.add(textNomeCliente);
+		textNomeCliente.setColumns(10);
+		
+		JLabel lblEmail = new JLabel("E-Mail:");
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblEmail.setBounds(21, 105, 98, 14);
+		contentPane.add(lblEmail);
+		
+		textEmail = new JTextField();
+		textEmail.setBounds(21, 130, 447, 20);
+		contentPane.add(textEmail);
+		textEmail.setColumns(10);
+		
+		JLabel lblIdUsuario = new JLabel("id do Usu\u00E1rio");
+		lblIdUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblIdUsuario.setBounds(21, 196, 98, 19);
+		contentPane.add(lblIdUsuario);
+		
+		textIdUsuario = new JTextField();
+		textIdUsuario.setColumns(10);
+		textIdUsuario.setBounds(21, 226, 86, 20);
+		contentPane.add(textIdUsuario);
+		
+		JLabel lblNomeUsuario = new JLabel("Nome do Usu\u00E1rio:");
+		lblNomeUsuario.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNomeUsuario.setBounds(143, 198, 173, 14);
+		contentPane.add(lblNomeUsuario);
+		
+		textNomeUsuario = new JTextField();
+		textNomeUsuario.setColumns(10);
+		textNomeUsuario.setBounds(143, 226, 325, 20);
+		contentPane.add(textNomeUsuario);
+		
+		txtSenha = new JPasswordField();
+		txtSenha.setBounds(496, 226, 129, 20);
+		contentPane.add(txtSenha);
+		
+		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblSenha.setBounds(496, 198, 123, 14);
+		contentPane.add(lblSenha);
+		
+		lblIdEndereco = new JLabel("id do Endere\u00E7o");
+		lblIdEndereco.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblIdEndereco.setBounds(21, 288, 164, 19);
+		contentPane.add(lblIdEndereco);
+		
+		textEndereco = new JTextField();
+		textEndereco.setColumns(10);
+		textEndereco.setBounds(21, 318, 86, 20);
+		contentPane.add(textEndereco);
+		
+		textLogradouro = new JTextField();
+		textLogradouro.setColumns(10);
+		textLogradouro.setBounds(143, 318, 325, 20);
+		contentPane.add(textLogradouro);
+		
+		textNumero = new JTextField();
+		textNumero.setColumns(10);
+		textNumero.setBounds(21, 388, 86, 20);
+		contentPane.add(textNumero);
+		
+		textBairro = new JTextField();
+		textBairro.setColumns(10);
+		textBairro.setBounds(143, 388, 325, 20);
+		contentPane.add(textBairro);
+		
+		lblLogradouro = new JLabel("Logradouro:");
+		lblLogradouro.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblLogradouro.setBounds(143, 290, 107, 14);
+		contentPane.add(lblLogradouro);
+		
+		lblNumero = new JLabel("N\u00FAmero:");
+		lblNumero.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNumero.setBounds(21, 363, 64, 14);
+		contentPane.add(lblNumero);
+		
+		lblBairro = new JLabel("Bairro:");
+		lblBairro.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblBairro.setBounds(143, 363, 129, 14);
+		contentPane.add(lblBairro);
+		
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "você clicou no botão");
+			}
+		});
+		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		btnCadastrar.setBounds(431, 431, 107, 23);
+		contentPane.add(btnCadastrar);
+	}
+}

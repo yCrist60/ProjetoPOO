@@ -1,0 +1,9 @@
+package classes;
+
+public class ContaBancaria {
+	public int numeroBanco;
+	public int numeroAgencia;
+	public int numeroConra;
+	public String titular;
+	public double saldo;
+}
